@@ -289,4 +289,12 @@ helm -n traefik-internal upgrade --install traefik-internal --create-namespace t
 ```link
 https://www.youtube.com/watch?v=Kfd6oKzUgbE
 https://github.com/quickbooks2018/aws/blob/master/pritunl/pritunl.sh
+
+# allow on your ip
+80
+443
+8443 0.0.0.0/0
+
+username: pritunl
+password: ---> run this command (docker exec -it pritunl pritunl default-password)
 ```
