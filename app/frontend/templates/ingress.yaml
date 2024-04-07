@@ -1,0 +1,23 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ .Values.ingressroute.name }}
+  namespace: {{ .Values.ingressroute.namespace }}
+  annotations:
+    kubernetes.io/ingress.class: "{{ .Values.ingressroute.annotations.ingressClass }}"
+spec:
+  entryPoints:
+    {{- toYaml .Values.ingressroute.entryPoints | nindent 4 }}
+  routes:
+    - match: {{ .Values.ingressroute.routes.match }}
+      kind: Rule
+      services:
+        - name: {{ .Values.ingressroute.services.name }}
+          namespace: {{ .Values.ingressroute.services.namespace }}
+          port: {{ .Values.ingressroute.services.port }}
+  {{- if .Values.ingressroute.tls.secretName }}
+  tls:
+    - secretName: {{ .Values.ingressroute.tls.secretName }}
+  {{- end }}
+{{- end }}
