@@ -282,7 +282,7 @@ helm show all traefik/traefik --version 24.0.0
 helm -n traefik upgrade --install traefik --create-namespace traefik/traefik --version 24.0.0 --values=traefik-values.yaml --wait
 
 # For Internal
-helm -n traefik upgrade --install traefik-internal --create-namespace traefik/traefik --version 24.0.0 --values=traefik-internal-values.yaml --wait
+helm -n traefik-internal upgrade --install traefik-internal --create-namespace traefik/traefik --version 24.0.0 --values=traefik-internal-values.yaml --wait
 ```
 
 - 8 Setup VPN
