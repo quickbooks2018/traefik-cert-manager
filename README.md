@@ -297,4 +297,6 @@ https://github.com/quickbooks2018/aws/blob/master/pritunl/pritunl.sh
 
 username: pritunl
 password: ---> run this command (docker exec -it pritunl pritunl default-password)
+
+Note: 8443 will not work, you need start the server(application) on 1194/tcp 
 ```
