@@ -280,5 +280,13 @@ helm show readme traefik/traefik --version 24.0.0
 helm show values traefik/traefik --version 24.0.0
 helm show all traefik/traefik --version 24.0.0 
 helm -n traefik upgrade --install traefik --create-namespace traefik/traefik --version 24.0.0 --values=traefik-values.yaml --wait
+
+# For Internal
+helm -n traefik upgrade --install traefik-internal --create-namespace traefik/traefik --version 24.0.0 --values=traefik-internal-values.yaml --wait
 ```
 
+- 8 Setup VPN
+```link
+https://www.youtube.com/watch?v=Kfd6oKzUgbE
+https://github.com/quickbooks2018/aws/blob/master/pritunl/pritunl.sh
+```

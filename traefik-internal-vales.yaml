@@ -10,7 +10,7 @@ ingressClass:
   enabled: true
   fallbackApiVersion: ""
   isDefaultClass: false
-  name: traefik-external
+  name: traefik-internal
 ingressRoute:
   dashboard:
     enabled: false
@@ -62,11 +62,11 @@ ports:
     port: 443
 providers:
   kubernetesCRD:
-    ingressClass: traefik-external
-    allowExternalNameServices: true
+    ingressClass: traefik-internal
+    allowinternalNameServices: true
     enabled: true
   kubernetesIngress:
-    allowExternalNameServices: true
+    allowinternalNameServices: true
     enabled: true
     ingressEndpoint:
       publishedService: traefik/traefik
@@ -90,7 +90,7 @@ securityContext:
 service:
   annotations:
     cloud.google.com/neg: '{"ingress":true}'
-    networking.gke.io/load-balancer-type: External
+    networking.gke.io/load-balancer-type: Internal
   enabled: true
   type: LoadBalancer
 
