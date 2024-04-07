@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-production
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: quickbooks2018@gmail.com
+    privateKeySecretRef:
+      name: letsencrypt-production
+    solvers:
+      - dns01:
+          cloudflare:
+            email: quickbooks2018@gmail.com
+            apiTokenSecretRef:
+              name: cloudflare-token-secret
+              key: cloudflare-token
+        selector:
+          dnsZones:
+            - "*.saqlainmushtaq.com" # Wildcard for all first-level subdomains
+            - "*.test.saqlainmushtaq.com" # Wildcard for all subdomains under test1.saqlainmushtaq.com
