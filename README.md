@@ -136,6 +136,10 @@ spec:
 kubectl get certificate -n default -o wide
 kubectl describe certificate local-saqlainmustaq-com -n default
 k get secrets -n default
+k get order -n default
+k describe order -n default
+k get CertificateRequest -n default
+k describe CertificateRequest -n default
 ```
 
 - 7 traefik Installation
