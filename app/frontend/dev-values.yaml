@@ -27,9 +27,8 @@ service:
   type: ClusterIP
   port: 80
 
-ingress:
-  enabled: true
 ingressroute:
+ enabled: true
   name: frontend-ingressroute
   namespace: frontend
   annotations:
