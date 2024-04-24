@@ -290,8 +290,8 @@ helm -n traefik-internal upgrade --install traefik-internal --create-namespace t
 ```
 
 - 8 Setup VPN
+- https://www.youtube.com/watch?v=Kfd6oKzUgbE
 ```link
-https://www.youtube.com/watch?v=Kfd6oKzUgbE
 https://github.com/quickbooks2018/aws/blob/master/pritunl/pritunl.sh
 
 # allow on your ip
